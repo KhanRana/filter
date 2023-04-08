@@ -21,6 +21,9 @@ const people = [
   },
 ];
 
+const legalAge  = people.filter(person => person.name.toLocaleLowerCase() === 'paul')[0];
+console.log(legalAge);
+
 
 // Complex Filtering
 const students = [
@@ -55,3 +58,11 @@ const students = [
     ]
   },
 ];
+
+const has5YExp = skill => skill.yrsExperience >= 5; 
+
+const hasStrongSkills = student => student.skills.filter(has5YExp).length > 0;
+
+const candidates = students.filter(hasStrongSkills);
+
+console.log(candidates.map(student => student.name));
